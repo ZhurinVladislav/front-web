@@ -1,0 +1,186 @@
+.footer
+  margin-top: auto
+  color: $clr_1
+  background-color: $clr_2
+
+  &__container
+    padding-top: 20px
+    padding-bottom: 20px
+
+  .footer-top
+    display: flex
+    align-items: flex-start
+    margin-bottom: 20px
+    font-size: 14px
+    line-height: .8
+
+    +phone
+      flex-direction: column
+      align-items: center
+
+    .logo
+      margin-right: 140px
+      max-width: 197px
+      min-height: 56px
+      font-size: 0
+      flex-shrink: 0
+
+      +small
+        margin-right: 50px
+
+      +phone
+        max-width: 150px
+        min-height: 50px
+        margin-right: 0
+        margin-bottom: 20px
+
+      &__img
+        width: 100%
+        height: 100%
+        font-size: 0
+        transition: opacity .2s ease-in-out
+
+        &:hover
+          opacity: .7
+
+    .content
+      display: flex
+      justify-content: space-between
+      max-width: 849px
+      width: 100%
+
+      +phone
+        flex-direction: column
+        align-items: center
+        text-align: center
+
+      .content-item
+        max-width: 186px
+
+        +phone
+          max-width: 100%
+
+        &:not(:last-child)
+          margin-right: 10px
+
+          +phone
+            margin-right: 0
+            margin-bottom: 25px
+
+      .item_title
+        margin-bottom: 20px
+
+      .footer-title
+        @include textReset
+        font-weight: 700
+        line-height: 1.2
+        font-size: 16px
+
+      .link
+        font-weight: 400
+        font-size: 14px
+        transition: color .2s linear
+
+        &:hover
+          color: $clr_3
+
+      .list-contacts
+        line-height: 1.2
+
+        .item
+
+          &:not(:last-child)
+            margin-bottom: 20px
+
+          &:first-child
+            .item__link
+              margin-bottom: 4px
+
+          &__descr
+            @include textReset
+            margin-bottom: 4px
+            font-weight: 300
+            font-size: 12px
+
+            &_last
+              margin-bottom: 0
+
+      .menu
+        &__title
+          margin-bottom: 20px
+
+        .list
+
+          &__item
+
+            &.active
+              color: $clr_3
+
+              &:hover
+                .link
+                  color: $clr_1
+
+            &:not(:last-child)
+              margin-bottom: 20px
+
+      .list-social
+
+        .item
+          &:not(:last-child)
+            margin-bottom: 20px
+
+  .copyright
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding-top: 20px
+    font-size: 12px
+    line-height: 1.2
+    text-transform: uppercase
+    border-top: 5px solid rgba($clr_1, .1)
+
+    +small
+      font-size: 10px
+
+    +phone
+      flex-direction: column
+
+    .item
+      &:not(:last-child)
+        margin-right: 10px
+
+        +phone
+          margin-right: 0
+          margin-bottom: 10px
+
+    &__text
+      @include textReset
+      opacity: .5
+
+    .link
+      display: flex
+      align-items: center
+      justify-content: center
+      opacity: .5
+      transition: opacity .2s linear
+
+      &:hover
+        opacity: 1
+
+      &__icon
+        position: relative
+        flex-shrink: 0
+        width: 46px
+        height: 20px
+        margin-right: 10px
+        fill: $clr_1
+        opacity: .5
+
+        &::before
+          content: ''
+          position: absolute
+          right: -5px
+          width: 1px
+          height: 100%
+          background-color: rgba($clr_1, .1)
+          
