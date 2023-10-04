@@ -1,11 +1,12 @@
 .hero
   position: relative
-  line-height: 1.2
-  min-height: 654px
-  background-image: url(../img/hero/bg-img.jpg)
+  // line-height: 1.2
+  min-height: 869px
+  background-image: url(../img/hero/bg-img.png)
   background-position: center
   background-size: cover
   background-repeat: no-repeat
+  text-transform: uppercase
 
   &::before
     content: ''
@@ -20,34 +21,39 @@
 
     +small
       display: block
-    
+
   +medium
     min-height: 400px
 
   &__container
-    padding-top: 86px
+    display: flex
+    flex-direction: column
+    // justify-content: flex-end
+    // align-items: flex-end
+    padding-top: 588px
     padding-bottom: 39px
     z-index: 3
 
     +small
-      padding-top: 40px
+      padding-top: 400px
       padding-bottom: 40px
 
     +phone
-      padding-top: 40px
+      padding-top: 200px
       padding-bottom: 40px
 
   &__title
-    margin-bottom: 20px
+    margin-bottom: 30px
     max-width: 758px
+    font-size: 22px
+    font-weight: 400
 
     +phone
       margin-bottom: 10px
 
   &__subtitle
     @include textReset
-    margin-bottom: 40px
-    font-weight: 700
+    font-size: 60px
 
     +phone
       margin-bottom: 25px
@@ -68,7 +74,7 @@
 
       &:not(:last-child)
         margin-right: 20px
-        
+
         +phone
           margin-right: 0
           margin-bottom: 15px

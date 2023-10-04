@@ -1,5 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  // HOVER НА КНОПКАХ
+  (() => {
+    const btn = document.querySelector('.js-hover-btn');
+
+    btn.addEventListener('mouseenter', e => {
+      let $this = e.currentTarget,
+        relX = e.offsetX + 'px',
+        relY = e.offsetY + 'px';
+
+      $this.querySelector('.button__bg').style.cssText = `top: ${relY}; left: ${relX};`;
+    })
+
+    btn.addEventListener('mouseleave', e => {
+      let $this = e.currentTarget,
+          relX = e.offsetX + 'px',
+          relY = e.offsetY + 'px';
+
+      $this.querySelector('.button__bg').style.cssText = `top: ${relY};left: ${relX};`;
+    })
+  })();
+
   // МОБИЛЬНОЕ МЕНЮ
   (() => {
     const burgerBtn = document.getElementById('burger-toggle'),
@@ -236,22 +257,22 @@ document.addEventListener('DOMContentLoaded', () => {
   function sliderPortfolio() {
     let swiperArr = [],
       sliderArr = [];
-
+  
     const wrapper = document.querySelector('#portfolio-inner'),
       item = Array.from(wrapper.querySelectorAll('.portfolio-inner-slider__wrapper'));
-
+  
     item.forEach((e, i) => {
       const parent = e.parentNode.parentNode;
       e.classList.add(`slider-${i}`);
       parent.querySelector('.arrow_prev').classList.add(`p-${i}`);
       parent.querySelector('.arrow_next').classList.add(`n-${i}`);
-
+  
       sliderArr.push({
         wrapper: document.querySelector(`.slider-${i}`),
         arrowPrev: document.querySelector(`.p-${i}`),
         arrowNext: document.querySelector(`.n-${i}`),
       });
-
+  
       swiperArr[0] = new Swiper(".slider-" + 0, {
         navigation: {
           prevEl: ".p-" + 0,
@@ -264,25 +285,25 @@ document.addEventListener('DOMContentLoaded', () => {
           50: {
             slidesPerView: 1,
           },
-
+  
           768: {
             slidesPerView: 2,
           },
-
+  
           1024: {
             slidesPerView: 3,
           },
-
+  
           1300: {
             slidesPerView: 3,
           },
         },
       });
-
+  
     });
-
+  
   }
-
+  
   if (document.querySelector('#portfolio-inner')) {
     sliderPortfolio()
   }
@@ -427,8 +448,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // SPOILER ФИЛЬТРА
   function spoilerFilter() {
     const btn = document.getElementById('filter-btn'),
-          content = document.getElementById('filter-content'),
-          label = document.querySelectorAll('.js-label');
+      content = document.getElementById('filter-content'),
+      label = document.querySelectorAll('.js-label');
 
     content.setAttribute('open', '0');
 
@@ -447,7 +468,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
       });
     };
-    
+
     label.forEach(e => {
       e.addEventListener('click', () => {
         if (content.getAttribute('open') === '1') {
@@ -471,12 +492,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-    
+
   // ТАБЫ НА СТРАНИЦЕ "PROJECT"
   function tabProject() {
     let tab = document.querySelectorAll('.js-btn'),
-        tabWrapper = document.querySelector('.js-btn-wrapper'),
-        tabContent = document.querySelectorAll('.js-item-content');
+      tabWrapper = document.querySelector('.js-btn-wrapper'),
+      tabContent = document.querySelectorAll('.js-item-content');
 
     function hideTabContent(a) {
       for (let i = a; i < tabContent.length; i++) {
@@ -512,11 +533,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    tabWrapper.addEventListener('click', function(event) {
+    tabWrapper.addEventListener('click', function (event) {
       let target = event.target;
       if (target && target.classList.contains('js-btn')) {
-        for(let i = 0; i < tab.length; i++) {
-          
+        for (let i = 0; i < tab.length; i++) {
+
           if (target == tab[i]) {
             for (let a = 0; a < tab.length; a++) {
               tab[a].classList.remove('active')
@@ -531,7 +552,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if(document.querySelector('.project')) {
+  if (document.querySelector('.project')) {
     tabProject();
   }
 

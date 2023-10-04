@@ -1,0 +1,46 @@
+.services
+
+	&__container
+		display: flex
+		justify-content: space-between
+
+		+phone
+			flex-direction: column
+
+	&__descr
+		@include textReset
+		flex: 0 0 15%
+		margin-top: auto
+		font-size: 20px
+
+		+phone
+			margin-bottom: 20px
+			font-size: 16px
+
+	.list
+		flex: 0 0 46%
+
+		+small
+			flex: 0 0 59%
+
+		&__item
+			display: flex
+			align-items: flex-start
+
+			&:not(:last-child)
+				margin-bottom: 20px
+
+		&__item-number
+			flex: 0 0 10%
+
+		&__item-link
+			flex: 0 0 85%
+			font-size: 63px
+			line-height: .7
+			text-transform: uppercase
+
+			+small
+				font-size: 40px
+
+			+phone
+				font-size: 25px

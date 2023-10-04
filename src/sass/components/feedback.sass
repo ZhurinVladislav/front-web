@@ -1,0 +1,44 @@
+.feedback
+	background-color: $clr_5
+
+	&__container
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		text-align: center
+		padding-top: 40px
+		padding-bottom: 40px
+
+	&__title
+		margin-bottom: 60px
+
+	&__descr
+		@include textReset
+		margin-bottom: 40px
+		max-width: 1280px
+
+	&__btn
+		position: relative
+		overflow: hidden
+		display: block
+		z-index: 1
+
+		.button__text
+			z-index: 2
+
+		.button__bg
+			position: absolute
+			display: block
+			width: 0
+			height: 0
+			background-color: $clr_1
+			transition: width .4s linear, height .4s linear
+			transform: translate(-50%, -50%)
+			z-index: -1
+
+		&:hover
+			color: $clr_3
+			.button__bg
+				width: 250%
+				height: 700px
