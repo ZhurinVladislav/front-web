@@ -1,4 +1,9 @@
 .portfolio
+
+	&__title
+		// margin: 0 auto
+		// text-align: center
+
 	.projects-list
 		display: grid
 		gap: 40px
@@ -13,6 +18,10 @@
 			grid-template-areas: "one" "two" "three" "four" "five"
 
 		&__item
+			border-radius: 8px
+			box-shadow: 0 20px 50px rgba(195,184,173,.3)
+			overflow: hidden
+
 			&:nth-child(1)
 				grid-area: one
 

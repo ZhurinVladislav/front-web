@@ -1,5 +1,7 @@
 .feedback
-	background-color: $clr_5
+	// background-color: $clr_5
+	
+	// background: linear-gradient(117.34deg,hsla(0,0%,100%,.6) 5.81%,hsla(0,0%,100%,.1) 88.87%)
 
 	&__container
 		display: flex
@@ -9,6 +11,10 @@
 		text-align: center
 		padding-top: 40px
 		padding-bottom: 40px
+		background-color: rgba($clr_1, .2)
+		backdrop-filter: blur(10px)
+		box-shadow: 0 20px 50px rgba(195,184,173,.3)
+		border-radius: 8px
 
 	&__title
 		margin-bottom: 60px
@@ -18,27 +24,28 @@
 		margin-bottom: 40px
 		max-width: 1280px
 
-	&__btn
-		position: relative
-		overflow: hidden
-		display: block
-		z-index: 1
+	// &__btn
+		// position: relative
+		// overflow: hidden
+		// display: block
+		// border-radius: 8px
+		// z-index: 1
 
-		.button__text
-			z-index: 2
+		// .button__text
+		// 	z-index: 2
 
-		.button__bg
-			position: absolute
-			display: block
-			width: 0
-			height: 0
-			background-color: $clr_1
-			transition: width .4s linear, height .4s linear
-			transform: translate(-50%, -50%)
-			z-index: -1
+		// .button__bg
+		// 	position: absolute
+		// 	display: block
+		// 	width: 0
+		// 	height: 0
+		// 	background-color: $clr_1
+		// 	transition: width .4s linear, height .4s linear
+		// 	transform: translate(-50%, -50%)
+		// 	z-index: -1
 
-		&:hover
-			color: $clr_3
-			.button__bg
-				width: 250%
-				height: 700px
+		// &:hover
+		// 	color: $clr_3
+		// 	.button__bg
+		// 		width: 250%
+		// 		height: 700px

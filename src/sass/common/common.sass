@@ -54,8 +54,18 @@ body
   font-weight: 400
   font-size: 18px
   line-height: 1.2
-  color: $clr_3
-  background-color: $clr_1
+  // color: $clr_3
+  color: $clr_1
+  // background-color: $clr_1
+  // background-color: $clr_3
+  // background: linear-gradient(117.34deg,hsla(0,0%,100%,.6) 5.81%,hsla(0,0%,100%,.1) 88.87%)
+  // background: linear-gradient(90deg, #f598a8, #f6edb2)
+  // background: linear-gradient(90deg, $clr_3, $clr_6)
+  // background: linear-gradient(90deg, #cfecd0, #a0cea7, #9ec0db)
+  // background: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%)
+  // background: linear-gradient(rgba(135, 60, 255, 0.4), rgba(135, 60, 255, 0.0) 80%), linear-gradient(-45deg, rgba(120, 155, 255, 0.9) 25%, rgba(255, 160, 65, 0.9) 75%)
+  // background: linear-gradient(21deg, #dd03e4, #5611ec)
+  background: linear-gradient(rgb(60 204 255 / 56%), rgba(135, 60, 255, 0) 80%), linear-gradient(-45deg, rgb(198 133 69 / 90%) 25%, rgb(183 112 42 / 90%) 75%)
   opacity: 0
 
   +phone
@@ -66,10 +76,14 @@ body
 
   &::-webkit-scrollbar
     width: 16px
-    background-color: $clr_5
+    // width: 5px
+    // background-color: $clr_6
+    background: linear-gradient(rgba(60, 204, 255, 0.56), rgba(135, 60, 255, 0) 137%), linear-gradient(-45deg, rgba(198, 133, 69, 0.9) 25%, rgba(183, 112, 42, 0.9) 184%)
 
   &::-webkit-scrollbar-thumb
-    background-color: $clr_3
+    // background-color: $clr_4
+    background: rgba($clr_1, .6)
+    backdrop-filter: blur(10px)
 
 html.menu-open,
 body.menu-open
@@ -78,8 +92,8 @@ body.menu-open
 
 h1,h2,h3,h4,h5,h6,p,span,address,small,strong,a,ul,li,ol,button,input,textarea,img,svg,sup,sub
   &::selection
-    background-color: $clr_4
-    color: $clr_1
+    background-color: $clr_1
+    color: $clr_3
 
 a
   text-decoration: none
@@ -199,7 +213,8 @@ input[type='number']
     color: $clr_2
 
 .color
-  color: $clr_4
+  color: $clr_3
+  font-weight: 500
 
 .h-0
   position: absolute
@@ -230,11 +245,12 @@ input[type='number']
 .h-2
   @include textReset
   margin-bottom: 40px
-  font-weight: 700
-  font-size: 40px
+  font-weight: 400
+  font-size: 45px
   font-family: $ff_1
   line-height: 1.1
-  color: $clr_2
+  color: $clr_1
+  text-transform: uppercase
 
   +medium
     font-size: 40px
@@ -302,19 +318,45 @@ input[type='number']
     font-size: 12px
 
 .button
+  position: relative
   display: flex
   justify-content: center
   align-items: center
   padding: 28px 30px
   font-family: $ff_1
-  color: $clr_1
+  color: $clr_3
   max-width: 410px
   width: 100%
   min-height: 80px
   font-weight: 400
   // border: 2px solid $clr_3
-  background-color: $clr_3
+  background-color: $clr_1
+  // border: 2px solid $clr_3
+  overflow: hidden
+  z-index: 1
+  border-radius: 8px
   transition: background-color .2s linear, color .2s linear
+
+  &__text
+    z-index: 2
+
+  &__bg
+    position: absolute
+    display: block
+    width: 0
+    height: 0
+    background-color: $clr_3
+    border-radius: 60px
+    transition: width .4s linear, height .4s linear
+    transform: translate(-50%, -50%)
+    z-index: -1
+
+  &:hover
+    color: $clr_1
+
+    .button__bg
+      width: 250%
+      height: 700px
 
   // &:hover
   //   color: $clr_3
@@ -762,24 +804,35 @@ input[type='number']
     transform: translateY(200px)
 
   &:hover
-    background-color: $clr_2
-
-    .scroll-top__icon
-      transform: rotate(180deg) translateY(3px)
+    // background-color: $clr_2
+    .scroll-top__item
+      width: 30px
+      height: 30px
+      border-color: $clr_4
+      // border-width: 30px 30px 30px 30px
+    // .scroll-top__icon
+    //   transform: rotate(180deg) translateY(3px)
 
   &__item
-    position: absolute
-    width: 40px
-    height: 5px
-    background-color: $clr_4
+    // position: absolute
+    // width: 40px
+    // height: 5px
+    // background-color: $clr_4
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 0 20px 30px 20px
+    // border-width: 30px 30px 30px 30px
+    border-color: transparent transparent $clr_4 transparent
+    transition: border-color .2s linear
 
-    &:nth-child(1)
-      transform: rotate(229deg) translateY(14px)
-    &:nth-child(2)
-      transform: rotate(128deg) translateY(15px)
-    &:nth-child(3)
-      width: 45px
-      transform: translateY(10px)
+    // &:nth-child(1)
+    //   transform: rotate(229deg) translateY(14px)
+    // &:nth-child(2)
+    //   transform: rotate(128deg) translateY(15px)
+    // &:nth-child(3)
+    //   width: 45px
+    //   transform: translateY(10px)
       
 
   // &__icon
