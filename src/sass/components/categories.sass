@@ -1,5 +1,6 @@
 .categories
 	margin-bottom: 200px
+	
 	&__container
 		padding-left: 100px
 
@@ -69,11 +70,15 @@
 				flex: 0 0 59%
 
 			&__item
+				position: relative
 				display: flex
 				align-items: flex-start
+				font-size: 0
+				overflow: hidden
 
 				&:not(:last-child)
 					margin-bottom: 20px
+			
 
 			&__item-number
 				flex: 0 0 10%

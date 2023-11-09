@@ -1110,23 +1110,23 @@ input[type='number']
 // ЛИНИЯ С ТЕКСТОМ
 .line-wrapper
   position: absolute
-  top: 67px
-  left: -5vh
+  top: 115px
+  left: -10vh
   display: flex
   align-items: center
-  // height: 400px
+  height: 20px
   transform: rotate(-90deg)
 
   &__item
-    display: block
+    // display: block
     margin-right: 10px
     width: 89px
-    height: 1px
+    height: 2px
     background-color: $clr_3
 
   &__descr
     @include textReset
-    font-style: 18px
+    font-size: 18px
     text-transform: uppercase
 
 // КАПЧА
@@ -1145,6 +1145,9 @@ input[type='number']
   +phone
     transition: 0.6s
     transition-delay: 0s!important
+
+.transform
+  transition: all .25s cubic-bezier(.2, .31, .36, 1)
 
 .animation-elem:nth-child(even)
   opacity: 0
